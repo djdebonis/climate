@@ -26,11 +26,11 @@ def getData(sensor = 11, pin = 4):
 def read_temp_and_humidity(sensor = 11, pin = 4):
     temp_c, humidity = getData(sensor,pin)
 
-     if temp_c:
-         temp_f = temp_c * (9 / 5) + 32
-         return round(temp_f, 2), round(humidity, 2)
+    if temp_c:
+        temp_f = temp_c * (9 / 5) + 32
+        return round(temp_f, 2), round(humidity, 2)
 
-     return None, None
+    return None, None
 
 
 
