@@ -16,26 +16,26 @@ interval = 10
 columns = ["date", "time", "temperature", "humidity"]
 
 
-def getData(sensor = 11, pin = 4):
-    humidity, temperature = Adafruit_DHT.read_retry(sensor,pin)
-
-    return(humidity, temperature)
-
-
-
-def read_temp_and_humidity(sensor = 11, pin = 4):
-    temp_c, humidity = getData(sensor,pin)
-
-    if temp_c:
-        temp_f = temp_c * (9 / 5) + 32
-        return round(temp_f, 2), round(humidity, 2)
-
-    return None, None
+# def getData(sensor = 11, pin = 4):
+#     humidity, temperature = Adafruit_DHT.read_retry(sensor,pin)
+#
+#     return(humidity, temperature)
+#
+#
+#
+# def read_temp_and_humidity(sensor = 11, pin = 4):
+#     temp_c, humidity = getData(sensor,pin)
+#
+#     if temp_c:
+#         temp_f = temp_c * (9 / 5) + 32
+#         return round(temp_f, 2), round(humidity, 2)
+#
+#     return None, None
 
 def main():
     while True:
 
-        temperature, humidity = read_temp_and_humidity(11,4)
+        temperature, humidity = Adafruit_DHT.read_retry(11,4)
 
         current_dateTime = datetime.now()
         current_date = current_dateTime.strftime("%Y-%m-%d")
